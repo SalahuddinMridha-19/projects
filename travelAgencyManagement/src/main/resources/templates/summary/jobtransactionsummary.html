@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout2.html}"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="custom-content">
+    <h3><i class="fa fa-book"></i>Job Transaction Summary</h3>
+    <div class="row mb">
+        <!-- page start-->
+        <div class="content-panel">
+            <div class="adv-table">
+                <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered"
+                       id="hidden-table-info">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client_Name</th>
+                        <th>Amount</th>
+                        <th>paid Amount</th>
+                        <th>Due Amount</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="gradeA" th:each="s : ${jobsummarylist}">
+                        <td th:text="${s.id}"></td>
+                        <td>
+                            <a th:href="@{'/summary/' + ${s.getClient().getId()}}" th:text="${s.client.clientName}">
+                            </a>
+                        </td>
+                        <td th:text="${s.totalAmount}"></td>
+                        <td th:text="${s.paidAmount}"></td>
+                        <td th:text="${s.dueAmount}"></td>
+                        <td class="center">
+                            <a th:href="@{'/jobtransactionupdate/' + ${s.id}}">
+                                <button type="button" class="btn btn-round btn-success ">Collect</button>
+                            </a>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- page end-->
+    </div>
+    <!-- /row -->
+
+
+</div>
+</body>
+</html>

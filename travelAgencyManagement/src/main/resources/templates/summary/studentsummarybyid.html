@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout2.html}"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="custom-content">
+    <h3><i class="fa fa-book"></i> Summary</h3>
+    <div >
+        <!-- page start-->
+        <div >
+            <div >
+                <table  class="display table "
+                       id="hidden-table-info">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Data</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="gradeA">
+                        <td>Client Name</td>
+                        <td th:text="${clientSummaryById.clientName}"></td>
+                    </tr>
+                    <tr class="gradeA">
+                        <td>Email</td>
+                        <td th:text="${clientSummaryById.email}"></td>
+                    </tr>
+                    <tr class="gradeA">
+                        <td>Passport Number</td>
+                        <td th:text="${clientSummaryById.passportNo}"></td>
+                    </tr>
+
+                    <tr class="gradeA">
+                        <td>Visa Type</td>
+                        <td th:text="${clientSummaryById.visatype.typeName}"></td>
+                    </tr>
+
+                    <tr class="gradeA">
+                        <td>Gender</td>
+                        <td th:text="${clientSummaryById.gender}"></td>
+                    </tr>
+
+                    <tr class="gradeA">
+                        <td>Mobile Number</td>
+                        <td th:text="${clientSummaryById.mobNo}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- page end-->
+    </div>
+    <!-- /row -->
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout2.html}"
+>
+<head>
+
+    <meta charset="UTF-8">
+    <title>List | Sagor</title>
+</head>
+<body>
+<div layout:fragment="custom-content">
+    <h3><i class="fa fa-ticket"></i>Student Package list</h3>
+    <div class="row mb">
+        <!-- page start-->
+        <div class="content-panel">
+            <div class="adv-table">
+                <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <thead>
+               <tr>
+                   <th>ID</th>
+                   <th>Package_Name</th>
+                   <th>Client_Name</th>
+                   <th>Package_Amount</th>
+                   <th>Payment_Amount</th>
+                   <th>Annual_Fee</th>
+                   <th>Country</th>
+                   <th>visa</th>
+                   <th>University</th>
+                   <th>branch</th>
+                   <th>Addmission_Level</th>
+                   <th>Action</th>
+
+               </tr>
+               </thead>
+               <tbody>
+               <tr class="gradeA" th:each="d : ${stulist}">
+                   <td th:text="${d.id}"></td>
+                   <td th:text="${d.name}"></td>
+                   <td th:text="${d.client.clientName}"></td>
+                   <td th:text="${d.amount}"></td>
+                   <td th:text="${d.paymentAmount}"></td>
+                   <td th:text="${d.annualFee}"></td>
+                   <td th:text="${d.country.name}"></td>
+                   <td th:text="${d.visatype.typeName}"></td>
+                   <td th:text="${d.universiry.name}"></td>
+                   <td th:text="${d.universityBranch.name}"></td>
+                   <td th:text="${d.addmissionLevel.name}"></td>
+
+                   <td class="center"><a th:href="@{'/studentpackage/edit/' + ${d.id}}"><button type="button" class="btn btn-round btn-success fa fa-edit"></button></a>
+                       <a th:href="@{'/studentpackage/del/' + ${d.id}}"><button type="button" class="btn btn-round btn-danger fa fa-times"></button></a>
+                   </td>
+
+               </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+        </div>
+        <!-- page end-->
+    </div>
+    <!-- /row -->
+
+
+
+</div>
+</body>
+</html>

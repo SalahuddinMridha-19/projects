@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout2.html}"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="custom-content">
+    <h3><i class="fa fa-book"></i> Summary Update</h3>
+    <div class="row mb">
+        <!-- page start-->
+        <div class="content-panel">
+
+               <form role="form" class="form-horizontal style-form" th:action="@{/summaryupdate/}+${id}"
+                     th:method="POST">
+                   <div class="form-group has-success">
+                       <label class="col-lg-2 control-label">Client Name</label>
+                       <div class="col-lg-10">
+                           <span th:class="mm" th:text="${success}"></span>
+                           <input type="text" th:value="${studentsummaryById.getClient().clientName}" disabled>
+                       </div>
+                   </div>
+
+                   <div class="form-group has-success">
+                       <label class="col-lg-2 control-label">Total Amount</label>
+                       <div class="col-lg-10">
+                           <input type="text" th:value="${studentsummaryById.payableAmount}" disabled>
+                       </div>
+                   </div>
+
+                   <div class="form-group has-success">
+                       <label class="col-lg-2 control-label">Paid Amount</label>
+                       <div class="col-lg-10">
+                           <input type="text" th:value="${studentsummaryById.paymentAmount}" disabled>
+                       </div>
+                   </div>
+
+
+                   <div class="form-group has-success">
+                       <label class="col-lg-2 control-label">Paid Amount</label>
+                       <div class="col-lg-10">
+                           <input type="text" th:value="${studentsummaryById.dueAmount}" disabled>
+                       </div>
+                   </div>
+
+
+                   <div class="form-group has-success">
+                       <label class="col-lg-2 control-label">Today Amount</label>
+                       <div class="col-lg-10">
+                           <input type="number" name="todayamount" >
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                       <div class="col-lg-offset-2 col-lg-10">
+                           <button class="btn btn-theme" type="submit">Submit</button>
+                           <button class="btn btn-theme" type="reset">Reset</button>
+                       </div>
+                   </div>
+               </form>
+
+
+                    </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- page end-->
+    </div>
+    <!-- /row -->
+
+
+</div>
+</body>
+</html>

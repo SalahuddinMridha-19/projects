@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}"
+>
+<head>
+
+    <style>
+            .err{
+                color: red;
+            }
+            .mm{
+                color: green;
+            }
+        .sform{
+            background-color: aqua;
+
+
+        }
+
+
+
+
+    </style>
+
+    <meta charset="UTF-8">
+    <title> Add | Sagor</title>
+</head>
+<body>
+<div layout:fragment="custom-content">
+
+    <h3><i class="fa fa-ticket"></i> Add Job_Package</h3>
+
+    <!-- BASIC FORM VALIDATION -->
+    <div class="row mt">
+        <div class="col-lg-12">
+
+            <div class="form-panel">
+
+                <form role="form" class="form-horizontal style-form" th:object="${jobpackage}" th:action="@{/jobpackage/add}"  th:method="POST" >
+
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Client Name</label>
+                        <div class="col-lg-10">
+                            <span th:class="mm" th:text="${success}"></span>
+                            <select th:field="*{client}" id="f-client" class="form-control">
+                                <option th:each="t : ${clientlist}" th:value="${t.id}"><span th:text="${t.clientName}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Package Amount</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="Please Enter The Amount" id="f-amoun" class="form-control"
+                                   th:field="*{totalAmount}" required="true">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Paid Amount</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="Please Enter The Amount" id="f-paidamoun" class="form-control"
+                                   th:field="*{paidAmount}" required="true">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Salary</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="Please Enter salary" id="f-salary" class="form-control"
+                                   th:field="*{salary}" required="true">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Country Name</label>
+                        <div class="col-lg-10">
+                            <select th:field="*{country}" id="f-count" class="form-control">
+                                <option th:each="t : ${countrylist}" th:value="${t.id}"><span th:text="${t.name}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Visa Type</label>
+                        <div class="col-lg-10">
+                            <select th:field="*{visatype}" id="f-vtype" class="form-control">
+                                <option th:each="t : ${visatypelist}" th:value="${t.typeId}"><span th:text="${t.typeName}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Company Name</label>
+                        <div class="col-lg-10">
+                            <select th:field="*{company}" id="f-com" class="form-control">
+                                <option th:each="t : ${companylist}" th:value="${t.id}"><span th:text="${t.name}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-success">
+                    <label class="col-lg-2 control-label">Branch Name</label>
+                    <div class="col-lg-10">
+                        <select th:field="*{companyBranch}" id="f-comb" class="form-control">
+                            <option th:each="t : ${companybranchlist}" th:value="${t.id}"><span th:text="${t.name}"></span></option>
+                        </select>
+                    </div>
+                </div>
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Job Type</label>
+                        <div class="col-lg-10">
+                            <select th:field="*{jobType}" id="f-jobt" class="form-control">
+                                <option th:each="t : ${typelist}" th:value="${t.id}"><span th:text="${t.name}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Post Name</label>
+                        <div class="col-lg-10">
+                            <select th:field="*{jobPost}" id="f-post" class="form-control">
+                                <option th:each="t : ${postlist}" th:value="${t.id}"><span th:text="${t.name}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-success">
+                        <label class="col-lg-2 control-label">Massage</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="Please Enter massage" id="f-mas" class="form-control"
+                                   th:field="*{massage}" required="true">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button class="btn btn-theme" type="submit">Submit</button>
+                            <button class="btn btn-theme" type="reset">Reset</button>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+            <!-- /form-panel -->
+        </div>
+        <!-- /col-lg-12 -->
+    </div>
+
+
+</div>
+</body>
+</html>

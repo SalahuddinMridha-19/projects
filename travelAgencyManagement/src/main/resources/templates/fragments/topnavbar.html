@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header class="header black-bg" th:fragment="topnav">
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" style="font-size:27px; color:#126172"  data-placement="right" data-original-title="Ayaan Travel Agency Ltd."></div>
+
+    </div>
+    <!--logo start-->
+    <a th:href="@{/}" class="logo"><b>AYAAN<span>TRAVEL</span>AGENCY</b></a>
+    <!--logo end-->
+
+    <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+            <li><a class="logout fa fa-sign-out" style="border-radius:99px; font-size:20px;color:red" th:href="@{/logout}">logout</a></li>
+        </ul>
+    </div>
+
+
+
+</header>
+<!--header end-->
+</body>
+</html>
