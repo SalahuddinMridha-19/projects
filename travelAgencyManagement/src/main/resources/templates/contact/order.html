@@ -5,7 +5,7 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title> Add | Mahbub</title>
+    <title> Add | Sagor</title>
 
 
     <style type="text/css">
@@ -54,11 +54,11 @@
 <body>
 <div layout:fragment="custom-content">
 <br><br><br>
-    <h3><i class="fa fa-book"></i> Drug Order</h3>
+    <h3><i class="fa fa-book"></i> Visa Information</h3>
 
     <form>
-        <input type="text" id="name" placeholder="Drug Name">
-        <input type="text" id="email" placeholder="Qty">
+        <input type="text" id="name" placeholder="Client Name">
+        <input type="text" id="email" placeholder="Visa Information">
         <input type="text" id="price" placeholder="Price">
         <input type="button" class="add-row" value="Add Row">
     </form>
@@ -66,17 +66,17 @@
         <thead>
         <tr>
             <th>Select</th>
-            <th>DrugName</th>
-            <th>Qty</th>
+            <th>Visa</th>
+            <th>Package</th>
             <th>Price</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td><input type="checkbox" name="record"></td>
-            <td>M-20</td>
-            <td>10</td>
-            <td>150</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1500000</td>
         </tr>
         </tbody>
 
@@ -85,7 +85,7 @@
             <th></th>
             <th></th>
             <th>Total</th>
-            <th>245</th>
+            <th>1500000</th>
         </tr>
         </thead>
     </table>

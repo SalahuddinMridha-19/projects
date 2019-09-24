@@ -57,8 +57,8 @@ public class BranchController {
 
     @GetMapping(value = "/edit/{id}")
     public String editShow(Model model,  @PathVariable("id") Long id) {
-        model.addAttribute("branchlist", this.branchRepo.findAll());
-        model.addAttribute("agencylist", this.agencyRepo.getOne(id));
+        model.addAttribute("branch", this.branchRepo.getOne(id));
+        model.addAttribute("agencylist", this.agencyRepo.findAll());
 
         return "branch/edit";
 

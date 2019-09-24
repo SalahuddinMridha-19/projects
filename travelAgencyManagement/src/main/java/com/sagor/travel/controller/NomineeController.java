@@ -56,7 +56,7 @@ public class NomineeController {
 
     @GetMapping(value = "/edit/{id}")
     public String editShow(Model model,  @PathVariable("id") Long id) {
-        model.addAttribute("nomineelist", this.nomineeRepo.findAll());
+        model.addAttribute("nominee", this.nomineeRepo.getOne(id));
         model.addAttribute("clientlist", this.clientRepo.findAll());
 
         return "nominee/edit";
